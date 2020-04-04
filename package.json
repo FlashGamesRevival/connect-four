@@ -28,7 +28,7 @@
 		}
 	},
 	"prettier": {
-		"arrowParens": "avoid",
+		"arrowParens": "always",
 		"endOfLine": "lf",
 		"jsxBracketSameLine": false,
 		"semi": false,
