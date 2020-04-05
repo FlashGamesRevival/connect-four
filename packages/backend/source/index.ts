@@ -1,39 +1,29 @@
 import http from 'http'
 import socketIo from 'socket.io'
+import { Messages } from '@connect-four/core'
+import { createMatch, getMatchState, setMatchState } from './matches'
+import { insertIntoColumn } from './logic'
 
 const server = http.createServer()
 
 const io = socketIo(server)
 
-const fakeRow = () =>
-	[...new Array(8)].map(() => ({
-		owner: Math.random() > 0.667 ? 'red' : Math.random() > 0.5 ? 'blue' : null,
-	}))
-
-const fakeRows = () => [...new Array(8)].map(fakeRow)
-
-const emitState = (client: socketIo.Socket) => {
-	console.debug('sending state')
-
-	client.emit('state', {
-		nextTurn: 'red',
-		rows: fakeRows(),
-	})
-}
-
 io.on('connection', (client) => {
 	console.log('connect')
 
-	const interval = setInterval(() => {
-		emitState(client)
-	}, 1000)
+	const matchId = createMatch()
 
-	client.on('event', (data) => {
-		console.log('event', data)
+	client.emit(Messages.Types.STATE, getMatchState(matchId))
+
+	client.on(Messages.Types.CHOOSE_COLUMN, (event: Messages.ChooseColumn) => {
+		console.debug(Messages.Types.CHOOSE_COLUMN, event)
+		setMatchState(matchId, insertIntoColumn(getMatchState(matchId), event))
+
+		client.emit(Messages.Types.STATE, getMatchState(matchId))
 	})
+
 	client.on('disconnect', () => {
 		console.log('disconnect')
-		clearInterval(interval)
 	})
 })
 

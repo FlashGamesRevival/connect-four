@@ -1,8 +1,6 @@
 import React from 'react'
-import { Entities } from '@connect-four/core'
-import { Dot } from '../../components/Dot'
-import { DotWrapper } from '../../components/DotWrapper'
-import { Row } from '../../components/Row'
+import { Board } from '../../components/Board'
+import { PlayerTurn } from '../../components/PlayerTurn'
 
 import './style.css'
 import styled from 'styled-components'
@@ -10,9 +8,12 @@ import { MatchStoreProvider, useMatchStoreContext } from './hooks'
 
 const Layout = styled.div`
 	display: flex;
+	flex-direction: column;
 
 	> main {
 		flex: 1;
+		display: flex;
+		margin: 0 auto;
 	}
 `
 
@@ -30,29 +31,12 @@ const Debugger = () => {
 	)
 }
 
-const Field = () => {
-	const { state } = useMatchStoreContext()
-
-	return (
-		<main>
-			{state.rows.map((row, rowIndex) => (
-				<Row key={rowIndex}>
-					{row.map((cell, cellIndex) => (
-						<DotWrapper>
-							<Dot key={cellIndex} {...cell} hoveredBy={null} />
-						</DotWrapper>
-					))}
-				</Row>
-			))}
-		</main>
-	)
-}
-
 const MatchView = () => {
 	return (
 		<MatchStoreProvider>
 			<Layout>
-				<Field />
+				<Board />
+				<PlayerTurn />
 				<Debugger />
 			</Layout>
 		</MatchStoreProvider>

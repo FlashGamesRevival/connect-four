@@ -2,7 +2,7 @@ import constate from 'constate'
 import React from 'react'
 
 import { useSocket } from 'use-socketio'
-import { Entities } from '@connect-four/core'
+import { Entities, Messages } from '@connect-four/core'
 
 type Event = {
 	name: string
@@ -12,20 +12,33 @@ type Event = {
 export const [MatchStoreProvider, useMatchStoreContext] = constate(
 	function MatchStore() {
 		const [state, setState] = React.useState<Entities.GameState>({
+			columns: [],
 			nextTurn: 'red',
-			rows: [],
 		})
 
 		const [events, setEvents] = React.useState<Event[]>([])
 
-		useSocket('state', (state: Entities.GameState) => {
-			setEvents([
-				...events,
-				{ name: 'state', description: 'updated game state' },
-			])
-			setState(state)
-		})
+		const { socket } = useSocket(
+			Messages.Types.STATE,
+			(state: Entities.GameState) => {
+				setEvents([
+					...events,
+					{ name: Messages.Types.STATE, description: 'updated game state' },
+				])
+				setState(state)
+			}
+		)
 
-		return { events, state }
+		return {
+			events,
+			sendChooseColumn: (event: Messages.ChooseColumn) => {
+				setEvents([
+					...events,
+					{ name: Messages.Types.CHOOSE_COLUMN, description: 'clicked column' },
+				])
+				socket.emit(Messages.Types.CHOOSE_COLUMN, event)
+			},
+			state,
+		}
 	}
 )

@@ -43,9 +43,10 @@
 	"repository": "git@github.com:FlashGamesRevival/connect-four",
 	"scripts": {
 		"build": "yarn run lerna run build",
+		"start:frontend": "yarn --cwd packages/core run build && yarn --cwd packages/frontend run start",
 		"start:backend": "yarn --cwd packages/backend run build && yarn --cwd packages/backend run start",
 		"watch:backend": "nodemon -e js,jsx,ts,tsx,json --watch packages/backend/ --exec \"yarn --cwd packages/backend run build && yarn --cwd packages/backend run start\"",
-		"start": "yarn --cwd packages/frontend run start"
+		"watch:frontend": "nodemon -e js,jsx,ts,tsx,json --watch packages/core/source/ --exec \"yarn --cwd packages/core run build && yarn --cwd packages/frontend run start\""
 	},
 	"version": "0.0.0",
 	"workspaces": [

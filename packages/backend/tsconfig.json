@@ -4,5 +4,10 @@
 		"outDir": "build",
 		"rootDir": "source"
 	},
-	"extends": "../tsconfig.settings.json"
+	"extends": "../tsconfig.settings.json",
+	"references": [
+		{
+			"path": "../core"
+		}
+	]
 }

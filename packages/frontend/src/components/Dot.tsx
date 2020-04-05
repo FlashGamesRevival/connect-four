@@ -15,7 +15,6 @@ const Dot = styled.div<DotType>`
 		else return '20px'
 	}};
 	background-color: ${({ hoveredBy, owner }) => {
-		console.log(hoveredBy, owner)
 		if (owner) return Colors[owner]
 		else if (hoveredBy)
 			return Colors[`${hoveredBy}Light` as 'blueLight' | 'redLight']
