@@ -18,6 +18,7 @@
 		"eslint-plugin-react-hooks": "^3.0.0",
 		"eslint-plugin-sort-destructure-keys": "^1.3.3",
 		"lerna": "^3.20.2",
+		"nodemon": "^2.0.2",
 		"prettier": "^2.0.2",
 		"pretty-quick": "^2.0.1",
 		"typescript": "^3.8.3"
@@ -27,6 +28,8 @@
 			"pre-commit": "pretty-quick --staged"
 		}
 	},
+	"license": "MIT",
+	"name": "connect-four",
 	"prettier": {
 		"arrowParens": "always",
 		"endOfLine": "lf",
@@ -36,10 +39,14 @@
 		"trailingComma": "es5",
 		"useTabs": true
 	},
-	"license": "MIT",
-	"name": "connect-four",
 	"private": true,
 	"repository": "git@github.com:FlashGamesRevival/connect-four",
+	"scripts": {
+		"build": "yarn run lerna run build",
+		"start:backend": "yarn --cwd packages/backend run build && yarn --cwd packages/backend run start",
+		"watch:backend": "nodemon -e js,jsx,ts,tsx,json --watch packages/backend/ --exec \"yarn --cwd packages/backend run build && yarn --cwd packages/backend run start\"",
+		"start": "yarn --cwd packages/frontend run start"
+	},
 	"version": "0.0.0",
 	"workspaces": [
 		"packages/*"

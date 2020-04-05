@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"composite": true,
+		"declaration": true,
+		"declarationMap": true,
+		"downlevelIteration": true,
+		"esModuleInterop": true,
+		"jsx": "react",
+		"lib": ["es2015", "es2016", "es2017", "dom", "es2018", "es2019"],
+		"module": "commonjs",
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"target": "es5",
+		"types": ["jest"],
+		"paths": {
+			"@connect-four/core": ["../core/source/index.ts"]
+		}
+	}
+}

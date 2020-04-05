@@ -1,0 +1,17 @@
+{
+	"directories": {
+		"build": "build"
+	},
+	"files": [
+		"build"
+	],
+	"license": "MIT",
+	"main": "build/index.js",
+	"name": "@connect-four/core",
+	"scripts": {
+		"build": "tsc --build .",
+		"clean": "rm -rf build tsconfig.tsbuildinfo"
+	},
+	"types": "build/index.d.ts",
+	"version": "0.0.0"
+}

@@ -1,6 +1,18 @@
 {
-	"name": "backend",
-	"version": "1.0.0",
+	"dependencies": {
+		"@connect-four/core": "*",
+		"socket.io": "^2.3.0"
+	},
+	"license": "MIT",
 	"main": "index.js",
-	"license": "MIT"
+	"name": "@connect-four/backend",
+	"scripts": {
+		"build": "tsc --build .",
+		"clean": "rm -rf build tsconfig.tsbuildinfo",
+		"start": "node build/index.js"
+	},
+	"version": "1.0.0",
+	"devDependencies": {
+		"@types/socket.io": "^2.1.4"
+	}
 }

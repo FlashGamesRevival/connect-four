@@ -1,0 +1,11 @@
+http://0.0.0.0:80 {
+	proxy /socket.io/ http://127.0.0.1:3001 {
+		websocket
+	}
+
+	proxy /sockjs-node http://127.0.0.1:3000 {
+		websocket
+	}
+
+	proxy / http://127.0.0.1:3000
+}
