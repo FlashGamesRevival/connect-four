@@ -11,5 +11,7 @@ yarn run lerna bootstrap
 ## Start
 
 ```bash
-yarn run start
+caddy
+yarn run watch:backend
+yarn run watch:frontend
 ```
