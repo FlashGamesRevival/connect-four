@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Entities } from '@connect-four/core'
-import { Colors } from '../theme'
+import { Colors } from '../../../theme'
 
 type DotType = Entities.Dot & { hoveredBy: Entities.Player['color'] | null }
 const Dot = styled.div<DotType>`

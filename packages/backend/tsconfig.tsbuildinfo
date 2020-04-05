@@ -330,12 +330,16 @@
         "signature": "77f677005b7c20fc3a6fbada883def7a9d45a5f09f391fac0a976d44bfa35622"
       },
       "../core/build/messages.d.ts": {
-        "version": "54c4a6165bc060d730c2b28e41ad46615c82a17fc7c712d4069dd94df6aa8f74",
-        "signature": "54c4a6165bc060d730c2b28e41ad46615c82a17fc7c712d4069dd94df6aa8f74"
+        "version": "ebaf4e44d96f30668aef3a51819ed37a30ca9c4d0f565247ac4b73a96d11479c",
+        "signature": "ebaf4e44d96f30668aef3a51819ed37a30ca9c4d0f565247ac4b73a96d11479c"
       },
       "../core/build/index.d.ts": {
         "version": "5b14ef1aed4270cec9b6645ddad11db3cf1078231eaed480b7d2c20043fa2be6",
         "signature": "5b14ef1aed4270cec9b6645ddad11db3cf1078231eaed480b7d2c20043fa2be6"
+      },
+      "./source/emit.ts": {
+        "version": "bac832240e652ba2b750cb20f9eb1bf70b54a44e04087ca9c9d80b6886f5b7ed",
+        "signature": "337be900186a67a3bd8beaede5a49fbc86687e40334554c6a0b92e5357dcbac2"
       },
       "../../node_modules/@types/uuid/interfaces.d.ts": {
         "version": "5cc5d6f26a50072d51c4ea3a85ee65574b7fa2ae48261ae27b07014695638c50",
@@ -346,15 +350,15 @@
         "signature": "f961dd194a4ed86a12a6e651bd1fc10d1cea2084b4dbb1a2bb8f3af9ee03a964"
       },
       "./source/matches.ts": {
-        "version": "0b4ea4b971189db8934ee5a3d132b72d7a0e3a049038b8b02121bf7e708ff374",
-        "signature": "047a0d14eb6943ae98a4e0adeb2f3b6e79c661c60a19ca5763fb018ff5c768c3"
+        "version": "6c78a9eafcdc95adaba2d919677ce6264ad8c1052a8d84764d0a5bcbf0034678",
+        "signature": "c4f50705b4bfd309db18ab638b3eff6250e8fd79bf7b5d135a4cb855959f674c"
       },
       "./source/logic.ts": {
-        "version": "2728eeb438f5486d24e2216c3efae02458523b6b08c50bde3b0af6af07617642",
-        "signature": "977576f514fed9e2a41600aff4b0431238a5f238a624da06116275fa51cb531a"
+        "version": "c81cefa67956ffad9a345a836139bcfa0b082aba79da2ddf82b3f7efab3763e8",
+        "signature": "392143b0b6a63912a34cd98c01d63de582dc9aae1c5bd3ae3497e1b4e4e93bb4"
       },
       "./source/index.ts": {
-        "version": "8c6f2586ac49be80751b2f958a86a65e9998f159a29e591626d8d20e40fa496d",
+        "version": "35e284ca20744563ddc94a8cc6982fd2f9a60f656bb7a17bf7dd23f96598c2cf",
         "signature": "f667f6b1d66ba55f0dcd27f5ff050063fecfe289bad00e8c5d48344a775c1439"
       },
       "../../node_modules/jest-diff/build/types.d.ts": {
@@ -989,6 +993,7 @@
         "../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../core/build/messages.d.ts": [
+        "../core/build/entities.d.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -997,6 +1002,14 @@
       "../core/build/index.d.ts": [
         "../core/build/entities.d.ts",
         "../core/build/messages.d.ts",
+        "../../node_modules/@types/node/fs.d.ts",
+        "../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../node_modules/@types/node/util.d.ts",
+        "../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./source/emit.ts": [
+        "../../node_modules/@types/socket.io/index.d.ts",
+        "../core/build/index.d.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -1036,6 +1049,7 @@
         "../core/build/index.d.ts",
         "./source/matches.ts",
         "./source/logic.ts",
+        "./source/emit.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -1641,6 +1655,7 @@
         "../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../core/build/messages.d.ts": [
+        "../core/build/entities.d.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -1653,6 +1668,10 @@
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
         "../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./source/emit.ts": [
+        "../../node_modules/@types/socket.io/index.d.ts",
+        "../core/build/index.d.ts"
       ],
       "../../node_modules/@types/uuid/interfaces.d.ts": [
         "../../node_modules/@types/node/fs.d.ts",
@@ -1765,14 +1784,15 @@
       "../core/build/entities.d.ts",
       "../core/build/messages.d.ts",
       "../core/build/index.d.ts",
+      "./source/emit.ts",
       "../../node_modules/@types/uuid/interfaces.d.ts",
       "../../node_modules/@types/uuid/index.d.ts",
+      "./source/matches.ts",
       "./source/logic.ts",
-      "./source/index.ts",
       "../../node_modules/jest-diff/build/types.d.ts",
       "../../node_modules/jest-diff/build/index.d.ts",
       "../../node_modules/@types/jest/index.d.ts",
-      "./source/matches.ts"
+      "./source/index.ts"
     ]
   },
   "version": "3.8.3"

@@ -6,10 +6,8 @@ const Column = styled.div`
 	flex-direction: column;
 
 	:hover {
-		background-color: gray;
-
 		${Dot} {
-			transform: scale(1.2);
+			transform: scale(1.25);
 		}
 	}
 `

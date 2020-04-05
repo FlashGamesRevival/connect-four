@@ -1,6 +1,6 @@
 import React from 'react'
-import { Board } from '../../components/Board'
-import { PlayerTurn } from '../../components/PlayerTurn'
+import { Board } from './components/Board'
+import { PlayerTurn } from './components/PlayerTurn'
 
 import './style.css'
 import styled from 'styled-components'
@@ -18,10 +18,11 @@ const Layout = styled.div`
 `
 
 const Debugger = () => {
-	const { events } = useMatchStoreContext()
+	const { events, matchId } = useMatchStoreContext()
 
 	return (
 		<aside>
+			{matchId}
 			{events.map((event, index) => (
 				<div key={index}>
 					{event.name}: {event.description}

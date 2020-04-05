@@ -24,6 +24,8 @@ export const createMatch = () => {
 	return id
 }
 
+export const hasMatch = (matchId: string) => matches.has(matchId)
+
 export const setMatchState = (matchId: string, state: Entities.GameState) => {
 	console.debug(`updating ${matchId}`, state)
 

@@ -130,8 +130,8 @@
         "signature": "77f677005b7c20fc3a6fbada883def7a9d45a5f09f391fac0a976d44bfa35622"
       },
       "./source/messages.ts": {
-        "version": "2023ae0d77f51e9b8f4e42a15b43e9418371536cf9e3c70d1bbb7c76622544b8",
-        "signature": "54c4a6165bc060d730c2b28e41ad46615c82a17fc7c712d4069dd94df6aa8f74"
+        "version": "c0f2db8dab1fc18975a141a55ca1019a21cba7d8918cc0566506beb4f362b651",
+        "signature": "ebaf4e44d96f30668aef3a51819ed37a30ca9c4d0f565247ac4b73a96d11479c"
       },
       "./source/index.ts": {
         "version": "8f863960a2dec46229f48402f6f25db5050a381602d5f051e8c056cc1dded36e",
@@ -185,6 +185,9 @@
       "configFilePath": "./tsconfig.json"
     },
     "referencedMap": {
+      "./source/messages.ts": [
+        "./source/entities.ts"
+      ],
       "./source/index.ts": [
         "./source/entities.ts",
         "./source/messages.ts"
@@ -197,6 +200,9 @@
       ]
     },
     "exportedModulesMap": {
+      "./source/messages.ts": [
+        "./source/entities.ts"
+      ],
       "./source/index.ts": [
         "./source/entities.ts",
         "./source/messages.ts"
@@ -240,12 +246,12 @@
       "../../node_modules/tsutils/node_modules/typescript/lib/lib.es2019.object.d.ts",
       "../../node_modules/tsutils/node_modules/typescript/lib/lib.es2019.string.d.ts",
       "../../node_modules/tsutils/node_modules/typescript/lib/lib.es2019.symbol.d.ts",
-      "./source/messages.ts",
       "../../node_modules/jest-diff/build/types.d.ts",
       "../../node_modules/jest-diff/build/index.d.ts",
       "../../node_modules/@types/jest/index.d.ts",
       "./source/entities.ts",
-      "./source/index.ts"
+      "./source/index.ts",
+      "./source/messages.ts"
     ]
   },
   "version": "3.8.3"

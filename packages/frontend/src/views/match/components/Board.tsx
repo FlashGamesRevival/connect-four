@@ -1,4 +1,4 @@
-import { useMatchStoreContext } from '../views/match/hooks'
+import { useMatchStoreContext } from '../hooks'
 import React from 'react'
 
 import { Dot } from './Dot'

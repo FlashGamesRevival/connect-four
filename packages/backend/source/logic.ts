@@ -3,7 +3,7 @@ import { Entities, Messages } from '@connect-four/core'
 export const insertIntoColumn = (
 	state: Entities.GameState,
 	event: Messages.ChooseColumn
-): Entities.GameState => {
+): Entities.GameState | null => {
 	let insertIndex: number | null = null
 
 	const column = state.columns[event.column]
@@ -14,7 +14,7 @@ export const insertIntoColumn = (
 			break
 		}
 
-	if (insertIndex === null) throw new Error('invalid move')
+	if (insertIndex === null) return null
 
 	console.debug('inserting into index', insertIndex)
 
